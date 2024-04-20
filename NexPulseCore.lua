@@ -1,18 +1,5 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({Name = "Advanced Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "KeySystem", IntroText = "Advanced Key System"})
-local function randomNumbers(min, max, length)
-    local key = ""
-    for i = 1, length do
-        key = key .. tostring(math.random(min, max))
-    end
-    return key
-end
-
-math.randomseed(os.time())
-
-function keyresulter(value)
-    return randomNumbers(0, 9, value)
-end
 
 local Tab = Window:MakeTab({
     Name = "Key System",
@@ -21,7 +8,6 @@ local Tab = Window:MakeTab({
 })
 
 local keyInput = "string"
-local Key = keyresulter(15)
 Tab:AddLabel("Your key is:", Key)
 
 Tab:AddTextbox({
